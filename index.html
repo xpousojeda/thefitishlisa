@@ -24,27 +24,24 @@
     h1.site-title {
       font-family: 'Ancizar Serif', serif;
       color: #ff29a8;
-      font-size: 3.5rem;
+      font-size: 4.5rem;
     }
 
-    h2, h3 {
+    h2, h3, h4, h5 {
       font-family: 'Michroma', sans-serif;
       color: #524fff;
     }
 
     h4 {
-      font-family: 'Michroma', sans-serif;
-      color: #524fff;
       font-size: 1.5rem;
     }
-    
+
     h5 {
-      font-family: 'Michroma', sans-serif;
       color: #ff29a8;
       font-size: 1.5rem;
     }
 
-    .subtext, .subtitle {
+    .subtext, .subtitle, .confidence-text p {
       font-family: 'Michroma', sans-serif;
       color: #ff29a8;
       font-size: 1rem;
@@ -115,17 +112,19 @@
 
     .consultation {
       background-color: #524fff;
-      color: white;
+      color: #f1f1f1;
       padding: 4rem 2rem;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      align-items: center;
       border-radius: 10px;
     }
 
+    .consultation-text {
+      overflow: hidden;
+    }
+
     .consultation img {
-      max-width: 400px;
+      max-width: 350px;
+      float: right;
+      margin-left: 2rem;
       border-radius: 12px;
     }
 
@@ -174,10 +173,6 @@
         <h2>My Philosophy</h2>
         <div class="philosophy-grid">
           <div class="philosophy-item">
-            <h4>ENCOURAGEMENT</h4>
-            <p>Everyone needs someone to believe in them. Everyone needs a personal cheerleader! TheFitishLisa is your someone.</p>
-          </div>
-          <div class="philosophy-item">
             <h4>PROCESS FLOW</h4>
             <p>The life you want doesn’t just happen by accident. Let’s create a plan that you can stick to!</p>
           </div>
@@ -189,6 +184,10 @@
             <h4>ACCOUNTABILITY</h4>
             <p>Accountability hurts—but it works. Let TheFitishLisa keep you on track to achieve your goals.</p>
           </div>
+          <div class="philosophy-item">
+            <h4>ENCOURAGEMENT</h4>
+            <p>Everyone needs someone to believe in them. Everyone needs a personal cheerleader! TheFitishLisa is your someone.</p>
+          </div>
         </div>
         <a href="#consultation" class="cta-button">Get Started</a>
       </section>
@@ -196,11 +195,11 @@
       <!-- Consultation Section -->
       <section class="consultation" id="consultation">
         <div class="consultation-text">
+          <img src="images/consultation-photo.png" alt="Meditation class with candles" />
           <h5>Free Consultation</h5>
           <p>It’s time to get curious! Contact me for a free consultation and find out how my model of being perfectly imperfect will help you live the life you want to live.</p>
           <a href="contact.html" class="button-pink">Learn More</a>
         </div>
-        <img src="images/consultation-photo.png" alt="Meditation class with candles" />
       </section>
 
       <!-- Blog Preview Section -->
