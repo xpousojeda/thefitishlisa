@@ -4,7 +4,130 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>The Fitish Lisa | Home</title>
-  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Ancizar+Serif&family=Michroma&family=Open+Sans&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Helvetica Neue', sans-serif;
+      background-color: #f5f5f5;
+    }
+
+    .content-wrapper {
+      background-color: white;
+      max-width: 1100px;
+      margin: 2rem auto;
+      padding: 2rem;
+      border-radius: 10px;
+    }
+
+    h1.site-title {
+      font-family: 'Ancizar Serif', serif;
+      color: #ff29a8;
+      font-size: 2.5rem;
+    }
+
+    h2, h3 {
+      font-family: 'Michroma', sans-serif;
+      color: #524fff;
+    }
+
+    .subtext, .subtitle {
+      font-family: 'Open Sans', sans-serif;
+      color: #ff29a8;
+      font-size: 1rem;
+    }
+
+    .hero {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      padding: 4rem 2rem;
+    }
+
+    .hero-content {
+      flex: 1 1 50%;
+    }
+
+    .hero-image img {
+      width: 300px;
+      border-radius: 50%;
+      border: 5px solid #ff29a8;
+    }
+
+    .confidence {
+      background-color: #524fff;
+      color: white;
+      padding: 4rem 2rem;
+      text-align: center;
+      border-radius: 10px;
+    }
+
+    .confidence-img {
+      max-width: 100%;
+      border-radius: 8px;
+      margin-bottom: 2rem;
+    }
+
+    .philosophy, .blog-preview, .pricing {
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+
+    .philosophy-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 2rem;
+      text-align: left;
+    }
+
+    .cta-button, .button-pink {
+      display: inline-block;
+      padding: 0.75rem 1.5rem;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 4px;
+      margin-top: 1rem;
+    }
+
+    .cta-button {
+      border: 2px solid #524fff;
+      color: #524fff;
+    }
+
+    .button-pink {
+      background-color: white;
+      color: #ff29a8;
+    }
+
+    .consultation {
+      background-color: #524fff;
+      color: white;
+      padding: 4rem 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      border-radius: 10px;
+    }
+
+    .consultation img {
+      max-width: 400px;
+      border-radius: 12px;
+    }
+
+    .fine-print {
+      font-size: 0.75rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.875rem;
+      color: #999;
+    }
+  </style>
 </head>
 <body>
   <div class="background-wrapper">
@@ -28,9 +151,9 @@
       <section class="confidence">
         <img src="images/confidence-photo.png" alt="Group fitness class in action" class="confidence-img" />
         <div class="confidence-text">
-          <h2>To achieve your goals, you must have the confidence to go after them!</h2>
-          <h2>The best way to grow confidence is by doing things you never thought you could.</h2>
-          <h2>After a lifetime of avoiding it, I finally found my confidence through at-home fitness!</h2>
+          <p>To achieve your goals, you must have the confidence to go after them!</p>
+          <p>The best way to grow confidence is by doing things you never thought you could.</p>
+          <p>After a lifetime of avoiding it, I finally found my confidence through at-home fitness!</p>
         </div>
       </section>
 
@@ -39,20 +162,20 @@
         <h2>My Philosophy</h2>
         <div class="philosophy-grid">
           <div class="philosophy-item">
-            <h2>ENCOURAGEMENT</h2>
-            <p>Everyone needs someone to believe in them. Everyone needs a personal cheerleader! TheFitishLisa is your someone. I truly want you to be happy and will cheer for you, always!</p>
+            <h3>ENCOURAGEMENT</h3>
+            <p>Everyone needs someone to believe in them. Everyone needs a personal cheerleader! TheFitishLisa is your someone.</p>
           </div>
           <div class="philosophy-item">
-            <h2>PROCESS FLOW</h2>
-            <p>The life you want doesn’t just happen by accident. TheFitishLisa is an expert at breaking down goals into attainable tasks! Let’s create a plan that you can stick to!</p>
+            <h3>PROCESS FLOW</h3>
+            <p>The life you want doesn’t just happen by accident. Let’s create a plan that you can stick to!</p>
           </div>
           <div class="philosophy-item">
-            <h2>GRACE</h2>
-            <p>Life happens! Learning how to give yourself grace is important! TheFitishLisa calls this being “perfectly imperfect.” This puts the “ish” in Fit-ish.</p>
+            <h3>GRACE</h3>
+            <p>Life happens! Learning how to give yourself grace is important. That’s what puts the “ish” in Fit-ish.</p>
           </div>
           <div class="philosophy-item">
-            <h2>ACCOUNTABILITY</h2>
-            <p>Accountability hurts. But the truth is, that without someone holding us accountable, we may never reach our goals. Let TheFitishLisa keep you on track!</p>
+            <h3>ACCOUNTABILITY</h3>
+            <p>Accountability hurts—but it works. Let TheFitishLisa keep you on track to achieve your goals.</p>
           </div>
         </div>
         <a href="#consultation" class="cta-button">Get Started</a>
@@ -71,7 +194,7 @@
       <!-- Blog Preview Section -->
       <section class="blog-preview">
         <h2>Random Thoughts <span class="subtitle">(aka the blog)</span></h2>
-        <p>This is it! This is the place where I get vulnerable! Where I share what’s on my mind, and help you think through the excuses holding you back.</p>
+        <p>This is where I get vulnerable—where I share what’s on my mind and help you think through the excuses holding you back.</p>
         <p>I understand. I’ve been there. I’m still learning, and I’ll be right alongside you through this journey.</p>
         <a href="blog.html" class="cta-button">Read the Blog</a>
       </section>
@@ -80,7 +203,7 @@
       <section class="pricing">
         <h2><u>Making It Happen!</u></h2>
         <p>Here at The Fitish Lisa, I believe that consistency is crucial to achieving any goal. Whether it’s health, finances, or life goals—it starts with a positive mindset, a flexible plan, honest accountability, and a little grace.</p>
-        <p>Your commitment to living the life you love begins after our free consultation. We’ll meet weekly (Zoom or in-person) to reflect, plan, and build the life you love.</p>
+        <p>After your free consultation, we’ll meet weekly (Zoom or in-person) to reflect, plan, and build the life you love.</p>
         <p><strong>$400/month – Three-month commitment required to start the cycle.</strong></p>
         <p class="fine-print">THE FINE PRINT: If I can’t help, I’ll refer you to someone who can.</p>
       </section>
