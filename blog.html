@@ -13,33 +13,77 @@
       font-family: 'Helvetica Neue', sans-serif;
     }
 
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #524fff;
+      color: white;
+      padding: 1rem 2rem;
+      position: relative;
+    }
+
+    .logo {
+      font-family: 'Ancizar Serif', serif;
+      font-size: 2rem;
+    }
+
+    .hamburger {
+      font-size: 2rem;
+      cursor: pointer;
+      display: block;
+    }
+
+    .nav-links {
+      position: absolute;
+      top: 60px;
+      right: 20px;
+      background: white;
+      color: #524fff;
+      padding: 1rem;
+      display: none;
+      flex-direction: column;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      z-index: 10;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #524fff;
+      font-family: 'Michroma', sans-serif;
+      margin: 0.5rem 0;
+    }
+
+    .nav-links a:hover {
+      text-decoration: underline;
+    }
+
+    @media (min-width: 768px) {
+      .nav-links {
+        display: flex !important;
+        position: static;
+        flex-direction: row;
+        background: none;
+        box-shadow: none;
+        padding: 0;
+      }
+
+      .hamburger {
+        display: none;
+      }
+
+      .nav-links a {
+        margin: 0 1rem;
+      }
+    }
+
     .content-wrapper {
       background-color: white;
       max-width: 1100px;
       margin: 2rem auto;
       padding: 2rem;
       border-radius: 10px;
-      position: relative;
-    }
-
-    .home-button {
-      position: absolute;
-      top: 1rem;
-      right: 1rem;
-      font-family: 'Michroma', sans-serif;
-      background-color: white;
-      color: #524fff;
-      border: 2px solid #524fff;
-      padding: 0.5rem 1rem;
-      border-radius: 5px;
-      text-decoration: none;
-      font-size: 0.9rem;
-      transition: background 0.3s;
-    }
-
-    .home-button:hover {
-      background-color: #524fff;
-      color: white;
     }
 
     h1 {
@@ -87,29 +131,21 @@
       font-size: 0.875rem;
       color: #999;
     }
-
-    @media (max-width: 768px) {
-      h1 {
-        font-size: 2.5rem;
-      }
-
-      .home-button {
-        position: static;
-        display: block;
-        margin: 1rem auto;
-        text-align: center;
-      }
-
-      .blog-post h2 {
-        font-size: 1.25rem;
-      }
-    }
   </style>
 </head>
 <body>
-  <div class="content-wrapper">
-    <a href="index.html" class="home-button">Home</a>
+  <div class="navbar">
+    <div class="logo">THE FITISH LISA</div>
+    <div class="hamburger">&#9776;</div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="consultation.html">Consultation</a>
+      <a href="blog.html">Blog</a>
+      <a href="about.html">About Us</a>
+    </div>
+  </div>
 
+  <div class="content-wrapper">
     <h1>Random Thoughts</h1>
     <p class="subtext">Welcome to the blog — where I reflect, explore, and get real.</p>
 
@@ -123,6 +159,11 @@
   </div>
 
   <script>
+    document.querySelector('.hamburger').addEventListener('click', () => {
+      const nav = document.querySelector('.nav-links');
+      nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
+    });
+
     fetch('posts.json')
       .then(response => response.json())
       .then(posts => {
