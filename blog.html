@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog | The Fitish Lisa</title>
+  <link href="https://fonts.googleapis.com/css2?family=Ancizar+Serif&family=Michroma&family=Open+Sans&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #f5f5f5;
+      font-family: 'Helvetica Neue', sans-serif;
+    }
+
+    .content-wrapper {
+      background-color: white;
+      max-width: 1100px;
+      margin: 2rem auto;
+      padding: 2rem;
+      border-radius: 10px;
+    }
+
+    h1 {
+      font-family: 'Ancizar Serif', serif;
+      color: #ff29a8;
+      font-size: 4rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .subtext {
+      font-family: 'Open Sans', sans-serif;
+      font-size: 1.2rem;
+      color: #524fff;
+      margin-bottom: 2rem;
+    }
+
+    .blog-post {
+      margin-bottom: 3rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid #ccc;
+    }
+
+    .blog-post h2 {
+      font-family: 'Michroma', sans-serif;
+      color: #524fff;
+      margin-bottom: 0.25rem;
+    }
+
+    .blog-post .date {
+      font-size: 0.9rem;
+      color: #888;
+      margin-bottom: 1rem;
+      font-family: 'Open Sans', sans-serif;
+    }
+
+    .blog-post p {
+      font-size: 1.1rem;
+      line-height: 1.75;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 4rem;
+      padding: 2rem;
+      font-size: 0.875rem;
+      color: #999;
+    }
+
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2.5rem;
+      }
+
+      .blog-post h2 {
+        font-size: 1.25rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="content-wrapper">
+    <h1>Random Thoughts</h1>
+    <p class="subtext">Welcome to the blog — where I reflect, explore, and get real.</p>
+
+    <div id="blog-container">
+      <!-- Blog posts will be injected here -->
+    </div>
+
+    <footer>
+      <p>&copy; 2025 The Fitish Lisa. All rights reserved.</p>
+    </footer>
+  </div>
+
+  <script>
+    fetch('posts.json')
+      .then(response => response.json())
+      .then(posts => {
+        const container = document.getElementById('blog-container');
+        posts.forEach(post => {
+          const div = document.createElement('div');
+          div.className = 'blog-post';
+          div.innerHTML = `
+            <h2>${post.title}</h2>
+            <p class="date">${post.date}</p>
+            <p>${post.content}</p>
+          `;
+          container.appendChild(div);
+        });
+      })
+      .catch(err => {
+        document.getElementById('blog-container').innerHTML = '<p>Unable to load blog posts right now.</p>';
+        console.error('Error loading blog:', err);
+      });
+  </script>
+</body>
+</html>
